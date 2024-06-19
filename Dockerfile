@@ -1,10 +1,10 @@
 # 该镜像需要依赖的基础镜像
-FROM openjdk:8
+FROM centos
 # 将当前目录下的jar包复制到docker容器的/目录下
-ADD demo-1.0.0-SNAPSHOT.jar /app.jar
+ADD rproject /rproject
 # 声明服务运行在8080端口
-EXPOSE 8088
+EXPOSE 9090
 # 指定docker容器启动时运行jar包
-ENTRYPOINT ["java", "-jar","/app.jar"]
+ENTRYPOINT ["./rproject"]
 # 指定维护者的名字
 MAINTAINER macrozheng
