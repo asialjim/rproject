@@ -32,7 +32,7 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
       port: 22 # 远程连接端口
       command_timeout: 5m # 远程执行命令超时时间
       script:
-        - cd /mydata/maven/build/coding/github/asialjim/rproject # 进入宿主机构建目录
+        - cd /mydata/cargo/build/coding/github/asialjim/rproject # 进入宿主机构建目录
         - chmod +x run.sh # 更改为可执行脚本
         - ./run.sh # 运行脚本打包应用镜像并运行
 
