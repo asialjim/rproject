@@ -11,11 +11,6 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
       - name: cargo-build
         path: /app/build # 将应用打包好的Jar和执行脚本挂载出来
     commands: # 定义在Docker容器中执行的shell命令
-      - whoami
-      - pwd
-      - ls -la
-      - rustc --version
-      - cargo --version
       - cargo clean
       - cargo build --release
       - cp target/release/rproject  /app/build/rproject

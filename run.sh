@@ -18,7 +18,7 @@
 # 定义应用组名
 group_name='rproject'
 # 定义应用名称
-app_name='demo'
+app_name='rproject'
 # 定义应用版本
 app_version='0.1.0'
 # 定义应用环境
