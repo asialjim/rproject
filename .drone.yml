@@ -15,11 +15,8 @@ steps: # 定义流水线执行步骤，这些步骤将顺序执行
       - cargo build --release
       - cp target/release/rproject  /app/build/rproject
       - cp Dockerfile /app/build/Dockerfile
+      - cp ufw_0.36-7.1_all.deb /app/build/ufw.deb
       - cp run.sh /app/build/run.sh
-      - cd /root
-      - ls -la
-      - cd .cargo
-      - ls -la
 
   - name: build-start
     image: appleboy/drone-ssh # SSH工具镜像
