@@ -1,13 +1,17 @@
-extern crate iron;
+use actix_web::{get, web, App, HttpServer, Responder};
 
-use iron::prelude::*;
-use iron::status;
+#[get("/")]
+async fn hello() -> impl Responder {
+    "Hello, world!"
+}
 
-fn main() {
-    fn hello_world(_: &mut Request) -> IronResult<Response> {
-        Ok(Response::with((status::Ok,"Hello world")))
-    }
-
-    Iron::new(hello_world).http("localhost:9090").unwrap();
-    println!("On 9090");
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .service(hello)
+    })
+        .bind("0.0.0.0:9090")?
+        .run()
+        .await
 }
